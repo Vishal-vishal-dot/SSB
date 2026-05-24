@@ -52,11 +52,38 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
+~~~
+am=7.72;
+fm=783;
+ac=12.7;
+fc=7830;
+fs=78300;
+t=0:1/fs:2/fm;
+em1=am*cos(2*%pi*fm*t);
+em2=am*sin(2*%pi*fm*t);
+ec1=ac*cos(2*%pi*fc*t);
+ec2=ac*sin(2*%pi*fc*t);
+s1=em1.*ec1;
+s2=em2.*ec2;
+elsb=s1+s2;
+eusb=s1-s2;
+subplot(4,1,1);
+plot(t,em1);
+subplot(4,1,2);
+plot(t,ec1);
+subplot(4,1,3);
+plot(t,elsb);
+subplot(4,1,4);
+plot(t,eusb);
+~~~
 
 OUTPUT WAVEFORM
+<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/5da9119e-d3e9-411a-9be2-1b6d7b289259" />
+
 
 TABULATION
 
+<img width="1080" height="1600" alt="image" src="https://github.com/user-attachments/assets/2d2a4d56-0334-44a7-b535-2cb55aeb3e30" />
 
 
 
